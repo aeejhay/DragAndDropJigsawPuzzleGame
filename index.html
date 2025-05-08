@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jigsaw Puzzle Game</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Jigsaw Puzzle Game</h1>
+            <div class="timer">Time: <span id="time">00:00</span></div>
+        </header>
+
+        <div class="controls">
+            <div class="upload-section">
+                <input type="file" id="imageUpload" accept="image/jpeg,image/png" class="file-input">
+                <label for="imageUpload" class="file-label">Choose Image</label>
+            </div>
+            
+            <div class="settings">
+                <select id="pieceCount" class="piece-select">
+                    <option value="12">12 Pieces (3x4)</option>
+                    <option value="16">16 Pieces (4x4)</option>
+                    <option value="20">20 Pieces (4x5)</option>
+                    <option value="24">24 Pieces (4x6)</option>
+                    <option value="30">30 Pieces (5x6)</option>
+                    <option value="36">36 Pieces (6x6)</option>
+                    <option value="42">42 Pieces (6x7)</option>
+                    <option value="48">48 Pieces (6x8)</option>
+                    <option value="56">56 Pieces (7x8)</option>
+                </select>
+                <button id="startGame" class="btn" disabled>Start Game</button>
+                <button id="stopTime" class="btn btn-stop" disabled>Stop Time</button>
+                <button id="resetGame" class="btn btn-reset" disabled>Reset Game</button>
+            </div>
+        </div>
+
+        <div class="game-container">
+            <div id="puzzleArea" class="puzzle-area"></div>
+            <div id="piecesArea" class="pieces-area"></div>
+        </div>
+
+        <div id="winMessage" class="win-message hidden">
+            <div class="win-content">
+                <h2>🎉 Congratulations!</h2>
+                <p>You completed the puzzle in <span id="finalTime">00:00</span></p>
+                <button id="playAgain" class="btn">Play Again</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> 
